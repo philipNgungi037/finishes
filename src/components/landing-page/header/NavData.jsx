@@ -1,19 +1,18 @@
 const Navs = [
     {
         name: 'Home',
-        link: '/'
-    },
-    {
-        name: 'Search',
-        link: 'search'
+        link: '/',
+        icon: '<ion-icon name="home-outline"></ion-icon>'
     },
     {
         name:'Account',
-        link: 'account'
+        link: 'account',
+        icon: '<ion-icon name="person-outline"></ion-icon>'
     },
     {
         name: 'Cart',
-        link: 'cart'
+        link: 'cart',
+        icon: '<ion-icon name="cart-outline"></ion-icon>'
     }
 ];
 export default Navs;
