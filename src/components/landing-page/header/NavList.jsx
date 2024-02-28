@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Navs from './NavData'
 
 const NavList = () => {
-     // state to open/close toggle-menu
-  const [isOpen, setIsOpen] = useState(false);
+    // state to open/close toggle-menu
+    const [isOpen, setIsOpen] = useState(false);
 
-   //function to toggle
-   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    //function to toggle
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
 
 
     return (
@@ -30,8 +30,21 @@ const NavList = () => {
                 </ul>
             </nav>
 
+            {/* //menu-button */}
+            <div className="menu lg:hidden">
+                <button
+                    onClick={toggleMenu}
+                    className="menu-button text-2xl md:text-4xl hover:border hover:border-yellow-400 "
+                >
+                    {isOpen
+                        ? <ion-icon name="close-outline" />
+                        : <ion-icon name="menu-outline" />}
+                </button>
+            </div>
+
 
         </div>
+
     )
 }
 
