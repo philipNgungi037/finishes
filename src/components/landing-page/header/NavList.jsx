@@ -1,7 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navs from './NavData'
 
 const NavList = () => {
+     // state to open/close toggle-menu
+  const [isOpen, setIsOpen] = useState(false);
+
+   //function to toggle
+   const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+
     return (
         <div className='nav-list px-16'>
             <nav className='navs'>
