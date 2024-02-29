@@ -7,7 +7,7 @@ import Search from './Search'
 const Header = () => {
   return (
     // All these below rendered scryRenderedComponentsWithType, make up the header.
-    <header className='header-main flex justify-between items-center mt-8 '>
+    <header className='header-main flex justify-between items-center my-4 px-16 shadow-lg sticky top-0'>
         <Logo/>
         <Search/>
         <NavList/> 
