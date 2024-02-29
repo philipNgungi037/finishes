@@ -1,0 +1,11 @@
+
+.hero-section{
+
+    
+}
+.carousel-img-details{
+    background-color: yellow;
+    opacity: 0.8;
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    
+}
