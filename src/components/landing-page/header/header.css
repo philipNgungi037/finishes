@@ -1,5 +1,5 @@
 .header-main{
-    background-color: blue;
+    background-color: white;
 
     .nav-list{
       
@@ -23,10 +23,15 @@
     .logo{
         
         padding: 8px;
-        border-radius: 8px;
+        color: yellow;
     }
 
     .yellow-bg {
+        background-color: yellow;
+        border-radius: 10px;
+      }
+
+      .search-button{
         background-color: yellow;
       }
       
