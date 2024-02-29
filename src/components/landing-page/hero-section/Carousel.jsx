@@ -54,11 +54,11 @@ const Carousel = () => {
       {/* <div className="w-full why-us-label mt-8 h-48 absolute top- p-4 bg-yellow-400">
 
       </div> */}
-      <div className="carousel-buttons text-xl sm:text-2xl lg:text-4xl flex justify-between ">
-        <button onClick={nextImage}>
+      <div className="carousel-buttons flex justify-between text-2xl">
+        <button onClick={nextImage} className="bg-white p-2 rounded-full" >
           <ion-icon name="chevron-back-outline" />
         </button>
-        <button onClick={prevImage}>
+        <button onClick={prevImage} className="bg-white p-2 rounded-full" >
           <ion-icon name="chevron-forward-outline" />
         </button>
       </div>
