@@ -1,0 +1,33 @@
+.header-main{
+    background-color: blue;
+
+    .nav-list{
+      
+    }
+    /* .navs{
+        background-color: aliceblue;
+        border-radius: 8px;
+     
+
+    } */
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        li{
+            padding: 8px;
+        }
+    }
+
+    .logo{
+        
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .yellow-bg {
+        background-color: yellow;
+      }
+      
+}
