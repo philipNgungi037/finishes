@@ -33,14 +33,14 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="carousel w-full ">
+    <div className="carousel w-3/4 ">
       <img
         src={CarouselData[currentIndex].imageUrl}
         alt={CarouselData[currentIndex].title}
-        className="carousel-img w-full relative bg-cover "
+        className="carousel-img w-full relative  h-[380px] rounded-md"
       />
-      <div className="carousel-img-details absolute top-32 text-black px-0 md:px-48 text-center w-full  m-auto py-4 sm:py-8 lg:py-16 ">
-        <h1 className="carousel-img-title text-xl sm:text-2xl lg:text-4xl">
+      <div className="carousel-img-details absolute top-36 p-4  ">
+        <h1 className="carousel-img-title text-xl pr-8">
           {CarouselData[currentIndex].title}
         </h1>
         <p className="carousel-img-location">
