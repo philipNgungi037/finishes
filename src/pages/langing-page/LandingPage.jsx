@@ -1,8 +1,11 @@
 import React from 'react'
+import HeroSection from '../../components/landing-page/hero-section/HeroSection'
 
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <div className='landing-page bg-gray-800 '>
+      <HeroSection />
+    </div>
   )
 }
 
