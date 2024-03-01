@@ -18,7 +18,7 @@ const Search = () => {
                 <ion-icon name="search-outline"></ion-icon>
             </div>
 
-            <input className='text-center p-1 lg:p-2 text-xs sm:text-sm border border-black rounded-md w-full '
+            <input className='text-start p-1 lg:p-2 text-xs sm:text-sm border border-black rounded-md w-full '
                 type="text"
                 placeholder="search for products, brands, categories... " 
                 value={searchQuery}
