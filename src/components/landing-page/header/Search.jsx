@@ -13,19 +13,19 @@ const Search = () => {
     };
 
     return (
-        <div className='search flex items-center '>
-            <div className='text-center p-1 lg:p-2 text-xs sm:text-sm  bg-yellow-200'>
+        <div className='search flex items-center w-1/2  '>
+            <div className='text-center p-1 lg:p-2 text-lg rounded-md'>
                 <ion-icon name="search-outline"></ion-icon>
             </div>
 
-            <input className='text-center p-1 lg:p-2 text-xs sm:text-sm bg-yellow-200  '
+            <input className='text-start p-1 lg:p-2 text-xs sm:text-sm border border-black rounded-md w-full '
                 type="text"
                 placeholder="search for products, brands, categories... " 
                 value={searchQuery}
                 onChange={handleSearchChange}
             />
 
-            <button className='bg-yellow-200 p-1 lg:p-2 px-4 text-xs sm:text-sm ml-2 lg:ml-8' onClick={handleSearch}>SEARCH</button>
+            <button className='search-button rounded-md p-1 lg:p-2 px-4 text-xs sm:text-sm ml-2 ' onClick={handleSearch}>SEARCH</button>
         </div>
     );
 };

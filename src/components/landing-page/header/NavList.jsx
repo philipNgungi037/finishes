@@ -12,7 +12,7 @@ const NavList = () => {
 
 
     return (
-        <div className='nav-list px-16'>
+        <div className='nav-list'>
             <nav className='navs'>
 
                 {/* Access Navs data, then map over it displaying them in flex list, the second last item in the list is backgrounded as yellow */}
