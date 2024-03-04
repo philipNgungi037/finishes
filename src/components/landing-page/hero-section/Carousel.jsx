@@ -59,8 +59,8 @@ const Carousel = () => {
       </div>
 
       {/* Action button that directs users to shopping */}
-      <div className="action-button w-1/4 absolute bottom-16 right-32">
-        <NormalButton onClick={handleClick} color="blue">
+      <div className="action-button w-1/4 absolute bottom-32 left-0">
+        <NormalButton onClick={handleClick} color="yellow">
           SHOP NOW!!!
         </NormalButton>
       </div>
