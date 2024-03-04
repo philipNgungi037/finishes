@@ -39,7 +39,7 @@ const Carousel = () => {
         alt={CarouselData[currentIndex].title}
         className="carousel-img w-full relative  h-[380px] rounded-md"
       />
-      <div className="carousel-img-details absolute top-44  p-4  ">
+      <div className="carousel-img-details absolute top-4 p-4">
         <h1 className="carousel-img-title text-2xl pr-8">
           {CarouselData[currentIndex].title}
         </h1>
