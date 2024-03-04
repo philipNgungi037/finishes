@@ -33,7 +33,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="carousel w-3/4 ">
+    <div className="carousel w-3/4 relative ">
       <img
         src={CarouselData[currentIndex].imageUrl}
         alt={CarouselData[currentIndex].title}
