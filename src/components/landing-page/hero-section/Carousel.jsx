@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CarouselData from "./CarouselData";
+import NormalButton from "../../re-usable components/buttons/NormalButton";
 
 
 
@@ -32,8 +33,14 @@ const Carousel = () => {
     };
   }, []);
 
+  // An event function to handle action button inside hero-section, for now it does nothing
+  const handleClick = () => {
+    // console.log('button clicked')
+    void {};
+  };
+
   return (
-    <div className="carousel w-3/4 relative ">
+    <div className="carousel w-3/4 relative">
       <img
         src={CarouselData[currentIndex].imageUrl}
         alt={CarouselData[currentIndex].title}
@@ -47,13 +54,18 @@ const Carousel = () => {
           {CarouselData[currentIndex].description}
         </p>
         <p className="carousel-img-offer text-white">
-        {CarouselData[currentIndex].offer}
+          {CarouselData[currentIndex].offer}
         </p>
-        {/* <img src={CarouselImages[currentIndex].image2Url} alt="" className="w-full"/> */}
       </div>
-      {/* <div className="w-full why-us-label mt-8 h-48 absolute top- p-4 bg-yellow-400">
 
-      </div> */}
+      {/* Action button that directs users to shopping */}
+      <div className="action-button w-1/4 absolute bottom-16 right-32">
+        <NormalButton onClick={handleClick} color="blue">
+          SHOP NOW!!!
+        </NormalButton>
+      </div>
+
+
       <div className="carousel-buttons w-full absolute bottom-4 px-2 flex justify-between  text-2xl">
         <button onClick={nextImage} className="bg-white p-2 rounded-full" >
           <ion-icon name="chevron-back-outline" />
