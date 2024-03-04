@@ -7,7 +7,7 @@ import './buttons.css';
 //** pass props to make it dynamic/custom.
 const NormalButton = ({ onClick, className, color, children }) => {
   // buttonStyles variable for styling, has its className called (normal-button) incase of cutom css. it carries color prop to be adjusted dynamically...hapo sawa!
-   const buttonStyles = `normal-button w-1/2 p-2  text-white font-bold hover:text-black hover:text-lg lg:p-4 rounded-md ${color}-button ${className}`;
+   const buttonStyles = `normal-button w-1/2 p-2 font-bold text-sm hover:text-xs rounded-md ${color}-button ${className}`;
   return (
     <button
        className={buttonStyles}
