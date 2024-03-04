@@ -1,4 +1,4 @@
-/* Add these styles to your CSS file */
+
 .red-button {
     background-color: red; /* Adjust the color as needed */
   }
@@ -10,6 +10,9 @@
   .blue-button {
     background-color: blue; /* Adjust the color as needed */
   }
+
+  .yellow-button {
+    background-color: yellow; /* Adjust the color as needed */
+  }
   
-  /* Add more styles as needed for other colors */
   
