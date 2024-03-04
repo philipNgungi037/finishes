@@ -54,7 +54,7 @@ const Carousel = () => {
       {/* <div className="w-full why-us-label mt-8 h-48 absolute top- p-4 bg-yellow-400">
 
       </div> */}
-      <div className="carousel-buttons flex justify-between text-2xl">
+      <div className="carousel-buttons w-full absolute bottom-4 px-2 flex justify-between  text-2xl">
         <button onClick={nextImage} className="bg-white p-2 rounded-full" >
           <ion-icon name="chevron-back-outline" />
         </button>
