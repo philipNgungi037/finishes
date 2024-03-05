@@ -22,13 +22,15 @@
 
     .logo{
         
-        padding: 8px;
+        /* padding: 8px; */
         color: yellow;
+        /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
     }
 
     .yellow-bg {
         background-color: yellow;
         border-radius: 10px;
+        
       }
 
       .search-button{
