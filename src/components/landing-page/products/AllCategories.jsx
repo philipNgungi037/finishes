@@ -7,16 +7,14 @@ const AllCategories = () => {
     console.log(AllCategories); 
 
     return (
-        <div>
+        <div className='all-categories-main px-16 mb-4 bg-white flex gap-4 overflow-x-scroll '>
             <h2>All Categories</h2>
-            <div className="categories-container flex overflow-x-scroll p-16 my-8">
                 {AllCategories.map((category, index) => (
                     <div key={index} className="category-item">
                         <h3>{category.title}</h3>
                         <img src={category.img} alt={category.title} />
                     </div>
                 ))}
-            </div>
         </div>
     );
 };
