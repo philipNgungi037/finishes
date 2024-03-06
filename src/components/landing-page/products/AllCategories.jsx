@@ -4,17 +4,16 @@ import { useProductContext } from '../../contexts/product-context/ProductContext
 const AllCategories = () => {
     const { AllCategories } = useProductContext();
 
-    console.log(AllCategories); 
+    console.log(AllCategories);
 
     return (
-        <div className='all-categories-main px-16 mb-4 bg-white flex gap-4 overflow-x-scroll '>
-            <h2>All Categories</h2>
-                {AllCategories.map((category, index) => (
-                    <div key={index} className="category-item">
-                        <h3>{category.title}</h3>
-                        <img src={category.img} alt={category.title} />
-                    </div>
-                ))}
+        <div className='all-categories-main px-16 mb-4 bg-white flex gap-4 mx-16 rounded-md'>
+            {AllCategories.map((category, index) => (
+                <div key={index} className="category-item my-4 font-light  text-sm text-center">
+                    <img src={category.img} alt={category.title} className='w-[200px] h-[200px] rounded-md ' />
+                    <h3>{category.title}</h3>
+                </div>
+            ))}
         </div>
     );
 };
