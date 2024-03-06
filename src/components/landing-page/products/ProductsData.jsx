@@ -44,7 +44,7 @@ const ProductsData = [
     id: 4,
     category: {
       title: 'Home & Kitchen',
-      img: 'https://static.thcdn.com/images/medium/original/widgets/290-en/34/HP_HERO_MOBILE_600x600_LIPS_MODEL-094534.jpg'
+      img: 'https://imageio.forbes.com/specials-images/imageserve/615b7a2d10f14c6d90c57d56/Small-appliances-on-a-kitchen-countertop-/960x0.jpg?format=jpg&width=960'
     },
     name: 'Stainless Steel Cookware Set (12-piece)',
     price: 149.99,
