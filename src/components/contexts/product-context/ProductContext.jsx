@@ -24,7 +24,7 @@ export const ProductProvider = ({ children }) => {
     const ClothingProducts = products.filter(product => product.category.title === 'Clothing');
     const BeautyProducts = products.filter(product => product.category.title === 'Beauty');
     const ExpensiveProducts = products.filter(product => product.price > 100);
-    const AffordableProducts = products.filter(product => product.price < 50);
+    const AffordableProducts = products.filter(product => product.price < 60);
 
     return (
         <ProductContext.Provider value={{
