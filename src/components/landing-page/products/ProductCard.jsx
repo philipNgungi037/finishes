@@ -12,7 +12,7 @@ const ProductCard = ({ product, width, height }) => {
       <p className='discount-tag absolute top-0 rounded-md p-1 px-2'><strong>Off -</strong> {product.discount}%</p>
       <div className="details p-4 text-center">
         <h2 className='font-extrabold  '>{product.name}</h2>
-        <p className='underline '><strong></strong> {product.category}</p>
+        <p className='underline '><strong></strong> {product.category.title}</p>
         <p className='text-sm'><strong> </strong> ${product.discountedPrice}</p>
         <p className='line-through'><strong></strong> ${product.price}</p>
         <p><strong></strong> {product.additionalParams}</p>
