@@ -16,7 +16,7 @@ const CategorySection = () => {
     ];
     
     return (
-        <div className='category-section w-1/4 h-[380px] rounded-md bg-white shadow-lg'>
+        <div className='category-section w-1/4 h-[380px] rounded-md bg-white shadow-lg mt-2'>
             <div className='category-wrapper m-4 '>
                 {
                     // map through the data to display icon alongside its name/category
