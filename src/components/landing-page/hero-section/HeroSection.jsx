@@ -5,7 +5,7 @@ import './hero-section.css'
 
 const HeroSection = () => {
     return (
-        <div className='hero-section flex gap-4 justify-between p-16'>
+        <div className='hero-section flex gap-4 justify-between px-16 '>
             <CategorySection/> 
             <Carousel/> 
 
