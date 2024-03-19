@@ -5,6 +5,7 @@ import TopOffers from '../../components/landing-page/products/TopOffers'
 import AllCategories from '../../components/landing-page/products/AllCategories'
 import Affordable from '../../components/landing-page/products/Affordable'
 import ClothesAndBeauty from '../../components/landing-page/products/ClothesAndBeauty'
+import AboutUs from '../../components/landing-page/about-us/About-us'
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <TopOffers/>
       <Affordable/>
       <ClothesAndBeauty/>
+      <AboutUs/>
       {/* <AllProducts/> */}
     </div>
   )
