@@ -12,7 +12,9 @@ const FooterEmail = () => {
 
     return (
         <div className='email-form  w-full p-8'>
-            {/* <h2>Email Submission Form</h2> */}
+            <h1 className='payments-title text-center p-4'>
+                Ready to Learn More? Let's Get Started!
+            </h1>
             <form onSubmit={handleSubmit} className='flex justify-center w-full'>
                 <label>
                     <input
@@ -21,10 +23,10 @@ const FooterEmail = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className='text-black'
+                        className='text-black p-4'
                     />
                 </label>
-                <button type="submit" className='email-submit hover:text-white '>SUBMIT</button>
+                <button type="submit" className='email-submit hover:text-white p-4 bg-slate-600'>SUBMIT</button>
             </form>
         </div>
     )
