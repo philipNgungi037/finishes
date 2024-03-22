@@ -1,14 +1,17 @@
 import React from 'react'
 import { description } from './about-us-data'
-import Logo from '../../header/Logo'
+// import Logo from '../../header/Logo'
 import Features from './Features'
 
 const Description = () => {
     return (
         <div className='about-us-description bg-white'>
-            <h1 className='description-title px-16 '>
-                <Logo /><span className=''><Features /></span>
+            <h1 className='description-title text-xl p-16 '>
+               About us
+                {/* <Logo /> */}
+               
             </h1>
+            <Features/>
             <div className='description-inner px-16 py-8 text-justify   '>
                 {
                     description.map(
