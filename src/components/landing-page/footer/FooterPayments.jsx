@@ -1,6 +1,7 @@
 import React from 'react'
-import payments from './footer-data'
+import { payments } from './footer-data'
 
+//This component will be displaying payments related links. It will import the links from Footer-data File. then .map will be used to display each link.
 const FooterPayments = () => {
   return (
     <div className='w-1/4 '>
