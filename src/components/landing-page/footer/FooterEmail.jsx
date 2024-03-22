@@ -23,10 +23,10 @@ const FooterEmail = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className='text-black p-4'
+                        className='text-black p-4 rounded-md mr-4'
                     />
                 </label>
-                <button type="submit" className='email-submit hover:text-white p-4 bg-slate-600'>SUBMIT</button>
+                <button type="submit" className='email-submit hover:text-white p-4 bg-slate-600 rounded-md'>SUBMIT</button>
             </form>
         </div>
     )
