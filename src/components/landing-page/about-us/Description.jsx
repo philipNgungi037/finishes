@@ -5,8 +5,8 @@ import Features from './Features'
 
 const Description = () => {
     return (
-        <div className='about-us-description bg-white'>
-            <h1 className='description-title text-xl p-16 '>
+        <div className='about-us-description bg-white rounded-md'>
+            <h1 className='description-title text-xl px-16 py-8 '>
                About us
                 {/* <Logo /> */}
                
