@@ -18,6 +18,17 @@ const NormalForms = ({ fields, onSubmit, buttonText, className, error }) => {
     setFormError(error);
   }, [error]);
 
+  // Function to handle input changes and update formData state as the user types.
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+
+
   return (
     <div>NormalForms</div>
   )
