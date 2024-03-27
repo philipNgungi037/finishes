@@ -13,6 +13,11 @@ const NormalForms = ({ fields, onSubmit, buttonText, className, error }) => {
   const [formData, setFormData] = useState(initialFormState);
   const [formError, setFormError] = useState(error);
 
+  // Update formError state when the error prop changes
+  useEffect(() => {
+    setFormError(error);
+  }, [error]);
+
   return (
     <div>NormalForms</div>
   )
