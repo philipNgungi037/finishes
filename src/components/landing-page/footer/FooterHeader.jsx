@@ -7,7 +7,7 @@ import FooterPayments from './FooterPayments'
 
 const FooterHeader = () => {
   return (
-    <div className='footer-header flex justify-between items-center col-span-3 bg-gray-400 px-16 '>
+    <div className='footer-header flex flex-col xs:flex-row justify-between items-center col-span-3 bg-gray-400 py-2 lg:py-0 px-2 lg:px-16 '>
       <FooterLogo/>
         <FooterEmail/>
         <FooterPayments/> 
