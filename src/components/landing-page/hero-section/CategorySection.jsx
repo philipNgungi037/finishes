@@ -14,18 +14,17 @@ const CategorySection = () => {
         { name: "Food & Groceries", icon: "restaurant" },
         { name: "Jewelry & Accessories", icon: "watch" }
     ];
-    
+
     return (
-        <div className='category-section w-1/4 h-[380px] rounded-md bg-white shadow-lg mt-2'>
-            <div className='category-wrapper m-4 '>
+        <div className='category-section w-full lg:w-1/4 lg:h-[380px] lg:rounded-md  overflow-x-scroll lg:overflow-x-hidden bg-white shadow-lg lg:mt-2 font-extralight lg:font-normal  text-xs lg:text-sm  text-black text-center'>
+            <div className='category-wrapper m-4 flex lg:block '>
                 {
                     // map through the data to display icon alongside its name/category
                     categories.map(
                         (category) =>
-                            <div className='flex gap-4 p-1  '>
-
+                            <div className=' lg:flex gap-4 p-1 border-r lg:border-none  '>
                                 {/* i have used fake `a tag links` to be replaced with real link using router dom  */}
-                                <a href='11'><h1 className=''>
+                                <a href='11'><h1 className='hidden lg:block'>
                                     <ion-icon name={category.icon}></ion-icon>
                                 </h1>
                                 </a>
@@ -34,9 +33,7 @@ const CategorySection = () => {
                                         {category.name}
                                     </h1>
                                 </a>
-
                             </div>
-
                     )
 
                 }
