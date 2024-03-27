@@ -8,9 +8,11 @@ const NormalForms = ({ fields, onSubmit, buttonText, className, error }) => {
 
   // Define initial form state based on the specific fields
   const initialFormState = Object.fromEntries(fields.map((field) => [field.name, '']));
+
+  // Set up state for form data and form error
   const [formData, setFormData] = useState(initialFormState);
   const [formError, setFormError] = useState(error);
-  
+
   return (
     <div>NormalForms</div>
   )
