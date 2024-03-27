@@ -13,7 +13,7 @@ const ProductCard = ({ product, width, height }) => {
       <img src={product.imgUrl}
         alt={product.name}
         // className='relative w-[300px] h-[200px]  bg-cover rounded-md 
-        className='relative w-[100px] h-[100px]  bg-cover rounded-md mx-[50px] '
+        className='relative w-[100px] h-[100px]  bg-cover rounded-md mx-[50px] lg:m-[0px] '
       />
       <p className='discount-tag absolute top-0 rounded-md p-1 px-2'><strong>Off -</strong> {product.discount}%</p>
       <div className="details p-4 text-center">
