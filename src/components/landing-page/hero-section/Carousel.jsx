@@ -40,7 +40,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel w-3/4 relative pt-2">
+    <div className="carousel w-full lg:w-3/4 relative pt-2">
       <img
         src={CarouselData[currentIndex].imageUrl}
         alt={CarouselData[currentIndex].title}
@@ -50,16 +50,16 @@ const Carousel = () => {
         <h1 className="carousel-img-title text-2xl pr-8">
           {CarouselData[currentIndex].title}
         </h1>
-        <p className="carousel-img-location">
+        <p className="carousel-img-location text-xs lg:text-sm">
           {CarouselData[currentIndex].description}
         </p>
-        <p className="carousel-img-offer text-white">
+        <p className="carousel-img-offer text-white text-xs lg:text-sm">
           {CarouselData[currentIndex].offer}
         </p>
       </div>
 
       {/* Action button that directs users to shopping */}
-      <div className="action-button w-1/4 absolute bottom-32 left-0">
+      <div className="action-button w-1/2 lg:w-1/4 absolute bottom-16 lg:bottom-32 left-0">
         <NormalButton onClick={handleClick} color="yellow">
           SHOP NOW!!!
         </NormalButton>
