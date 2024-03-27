@@ -3,7 +3,7 @@ import Description from './Description'
 
 const AboutUs = () => {
     return (
-        <div className='about-us-main text-sm px-16 rounded-md'>
+        <div className='about-us-main text-sm px-2 lg:px-16 rounded-md'>
             <Description />
 
         </div>
