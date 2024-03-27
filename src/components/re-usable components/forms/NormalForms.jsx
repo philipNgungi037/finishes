@@ -36,7 +36,40 @@ const NormalForms = ({ fields, onSubmit, buttonText, className, error }) => {
 
 
   return (
-    <div>NormalForms</div>
+    <form className={`w-full md:w-1/2 lg:w-full p-4  bordeborder-black  rounded-md ${className}`} onSubmit={handleSubmit}>
+
+      {/* Map over fields array to render form inputs */}
+      {fields.map((field) => (
+        <div key={field.name} className="mb-4">
+          <label htmlFor={field.name} className="block text-gray-700 text-sm font-bold mb-2">
+            {field.label}
+          </label>
+          <input
+            type={field.type || 'text'}
+            id={field.name}
+            name={field.name}
+            value={formData[field.name]}
+            onChange={handleChange}
+            className="w-full  px-8 lg:px-8 py-4 lg:py-6 border-b border-blue-500 text-start "
+          />
+        </div>
+      ))}
+
+      {/* Display form error if any */}
+      {formError && (
+        <div className="text-red-500 mb-4">
+          {formError}
+        </div>
+      )}
+
+      {/* Submit button */}
+      <button
+        type="submit"
+        className="w-full bg-blue-500 text-white p-4 lg:p-6 my-6 lg:my-8 rounded-md hover:bg-blue-700"
+      >
+        {buttonText}
+      </button>
+    </form>
   )
 }
 
