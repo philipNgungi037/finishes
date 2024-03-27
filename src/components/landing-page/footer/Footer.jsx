@@ -10,13 +10,13 @@ const Footer = () => {
   return (
     <div className='footer'>
       <FooterHeader />
-      <div className='flex justify-between mt-4 px-16' >
+      <div className='flex justify-between mt-2 lg:mt-4 px-2 lg:px-16 text-[11px] sm:text-sm' >
         <ImportantLinks />
         <FooterCustomer />
         <Business />
         <SocialLinks />
       </div>
-      <h1 className='copy-right my-4 font-extralight text-center border-t border-yellow-400 '>
+      <h1 className='copy-right my-4 font-extralight text-center text-[11px] sm:text-sm border-t border-yellow-400 '>
       Copyright 2024 <span className='line-through '>No logo</span>, All rights reserved.
       </h1>
     </div>
