@@ -8,7 +8,7 @@ import Business from './Business'
 //  Footer is just an UI component that renders all footer related components.
 const Footer = () => {
   return (
-    <div className='footer'>
+    <div className='footer bg-gray-500'>
       <FooterHeader />
       <div className='flex justify-between mt-2 lg:mt-4 px-2 lg:px-16 text-[11px] sm:text-sm' >
         <ImportantLinks />
