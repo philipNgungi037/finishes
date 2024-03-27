@@ -27,6 +27,12 @@ const NormalForms = ({ fields, onSubmit, buttonText, className, error }) => {
     }));
   };
 
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(formData);
+  };
+
 
 
   return (
