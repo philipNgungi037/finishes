@@ -17,7 +17,7 @@ const Footer = () => {
         <SocialLinks />
       </div>
       <h1 className='copy-right my-4 font-extralight text-center text-[11px] sm:text-sm border-t border-yellow-400 '>
-      Copyright 2024 <span className='line-through '>No logo</span>, All rights reserved.
+      Copyright 2024 <span className='line-through uppercase '>No logo</span>, All rights reserved.
       </h1>
     </div>
   )
