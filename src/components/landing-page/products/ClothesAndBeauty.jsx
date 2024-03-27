@@ -5,7 +5,7 @@ import ProductCard from './ProductCard';
 const ClothesAndBeauty = () => {
     const { BeautyProducts, ClothingProducts } = useProductContext();
     return (
-        <div className='clothes-and-beauty  relative  bg-gray-400 mx-16 py-4 rounded-md'>
+        <div className='clothes-and-beauty  relative  bg-gray-400 mx-2 lg:mx-16 py-4 rounded-md'>
             <div className='clothes-beauty-title p-2 '>
                 <h1 className='top-offer-title w-full text-center uppercase  rounded-md  ' >
                     beauty and clothing only
@@ -14,9 +14,9 @@ const ClothesAndBeauty = () => {
             </div>
 
            
-            <div className='flex justify-between  bg-gray-400 gap-4 p-4'>
+            <div className='lg:flex justify-between  bg-gray-400 gap-4 p-1 sm:p-4'>
                 
-                <div className='beauty-grid grid grid-cols-2 gap-4 bg-gray-900 p-4 rounded-md'>
+                <div className='beauty-grid grid grid-cols-2 gap-4 bg-gray-900 p-1 sm:p-4 rounded-md'>
 
                     {
                         BeautyProducts.map(
@@ -25,7 +25,7 @@ const ClothesAndBeauty = () => {
                         )
                     }
                 </div>
-                <div className='grid grid-cols-2 gap-4 bg-gray-600 p-4 rounded-md'>
+                <div className='grid grid-cols-2 gap-4 bg-gray-600 p-1 sm:p-4 rounded-md'>
 
                     {
                         ClothingProducts.map(
