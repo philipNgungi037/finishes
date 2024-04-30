@@ -4,7 +4,7 @@ const Navs = [
         name:'Account',
         link: 'account',
         icon: '<ion-icon name="person-outline"></ion-icon>',
-        navs: [
+        subnavs: [
             {
             name: 'sign-up',
             link: '',
