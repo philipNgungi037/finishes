@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navs from './NavData'
-
+import { NavLink } from 'react-router-dom';
 const NavList = () => {
     // state to open/close toggle-menu
     const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +9,9 @@ const NavList = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    // const activeLink = "border-b-4 border-yellow-400  text-yellow-400";
+    // const normalLink = "";
 
 
     return (
@@ -21,9 +24,13 @@ const NavList = () => {
                         Navs.map(
                             (nav, index) =>
                                 <li className={`nav-item  ${index === Navs.length - 2 ? 'yellow-bg' : ''}`} key={index}>
-                                    {/* Render the icon as HTML */}
-                                    <span dangerouslySetInnerHTML={{ __html: nav.icon }} className='mr-1 ' />
-                                    {nav.name}
+                                    <NavLink
+                                        to={nav.link}
+
+                                    >
+                                        <span dangerouslySetInnerHTML={{ __html: nav.icon }} className='mr-1 ' />
+                                        {nav.name}
+                                    </NavLink>
                                 </li>
                         )
                     }
