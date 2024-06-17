@@ -6,13 +6,13 @@ import { registerFields } from '../re-usable components/forms/forms-data'; // Im
 const Register = ({ onSubmit }) => {
 
     return (
-        <div className='register mx-auto'>
+        <div className='register mx-auto w-full xs:w-3/4 sm:w-1/2 bg-white rounded-none xs:rounded-md '>
             {/* Reusing the NormalForms component for rendering the login form */}
             <NormalForms
                 fields={registerFields} // Passes register form fields imported from formFields.js
                 onSubmit={onSubmit} // Passes handleSubmit function to handle form submission
                 buttonText="Register" // Text to display on the submit button
-                className="bg-gray-100" // Additional CSS class for styling the form
+                className="" // Additional CSS class for styling the form
             />
         </div>
     )
