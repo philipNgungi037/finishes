@@ -45,12 +45,12 @@ const NormalForms = ({ fields, onSubmit, buttonText, className, error }) => {
             {field.label}
           </label>
           <input
-            type={field.type || 'text'}
+            type={field.type }
             id={field.name}
             name={field.name}
             value={formData[field.name]}
             onChange={handleChange}
-            className="normal-forms-input w-full  px-8 lg:px-8 py-4 lg:py-6 border-b  text-start "
+            className="normal-forms-input w-full p-2 border-b border-yellow-400 bg-yellow-100  text-start "
           />
         </div>
       ))}
@@ -65,7 +65,7 @@ const NormalForms = ({ fields, onSubmit, buttonText, className, error }) => {
       {/* Submit button */}
       <button
         type="submit"
-        className="normal-forms-button w-full p-4 lg:p-6 my-6 lg:my-8 rounded-md"
+        className="normal-forms-button w-full bg-yellow-400 p-2 rounded-md"
       >
         {buttonText}
       </button>
