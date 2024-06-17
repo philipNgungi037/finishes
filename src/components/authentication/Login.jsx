@@ -1,13 +1,14 @@
 import React from 'react'
 import NormalForms from '../re-usable components/forms/NormalForms'; // Importing the reusable form component
 import { loginFields } from '../re-usable components/forms/forms-data'; // Importing the login form fields
+import { Link } from 'react-router-dom';
 
 // This component, accepts onSubmit as a prop from parent signin-page
 const Login = ({ onSubmit }) => {
 
 
     return (
-        <div className="container mx-auto"> 
+        <div className="login-container bg-white w-1/2 rounded-md"> 
    
             {/* Reusing the NormalForms component for rendering the login form */}
             <NormalForms
@@ -16,6 +17,18 @@ const Login = ({ onSubmit }) => {
                 buttonText="Login" // Text to display on the submit button
                 className="login-form" // Additional CSS class for styling the form
             />
+            <Link to="f">
+        {" "}<h2 className="font-semibold  p-2  hover:underline text-center">
+          Forgot your password?
+        </h2>
+      </Link>
+      <h2 className="p-2 mb-8 text-center">
+        Are you new here?<a href="register">
+          {" "}<span className="text-yellow-400 hover:text-yellow-200">
+            Register
+          </span>
+        </a>
+      </h2>
         </div>
     )
 }
