@@ -10,12 +10,12 @@ const Signup = () => {
             console.log("Form submitted with data:", formData);
         };
   return (
-    <div className='signup-page  w-full h-full bg-gray-200'>
+    <div className='signup-page  w-full h-full bg-gray-200 '>
         <Logo/>
         <h1 className='signin-title p-4 text-center'>
-        Access your account.
+        Create an Account
       </h1>
-      <Register onSubmit={handleSubmit}/>
+      <Register onSubmit={handleSubmit}  />
 
     </div>
   )
