@@ -35,6 +35,12 @@ module.exports = {
       backgroundImage:{
         'bg-image':'url("./file-path/img")',
       },
+
+      //this will be our global colors
+      colors: {
+        main: "yellow", 
+        background: "", 
+      },
       /**Fonts  */
       fontFace: {
         'fontawesome': {
