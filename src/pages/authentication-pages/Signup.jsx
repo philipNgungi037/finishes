@@ -10,8 +10,8 @@ const Signup = () => {
     const { signup, successMsg, errorMsg } = useAuth();
     // Define the onSubmit function to handle form submission
     const handleSubmit = (formData) => {
-        // Handle form submission logic here
-        console.log("Form submitted with data:", formData);
+        // Call the signup function from context
+        signup(formData);
     };
     return (
         <div className='signup-page  w-full h-full bg-gray-200 '>
