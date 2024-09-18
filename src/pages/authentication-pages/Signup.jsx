@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../../components/header/Logo'
 import Register from '../../components/authentication/Register'
+import { useAuth } from '../../components/contexts/AuthContext'; 
 
 // This component will be rendering all signup/register UIs
 const Signup = () => {
