@@ -21,6 +21,20 @@ const Signup = () => {
             </h1>
             <Register onSubmit={handleSubmit} />
 
+            {/* Display success message if any */}
+            {successMsg && (
+                <div className="text-green-500 text-center mt-4">
+                    {successMsg}
+                </div>
+            )}
+
+            {/* Display error message if any */}
+            {errorMsg && (
+                <div className="text-red-500 text-center mt-4">
+                    {errorMsg}
+                </div>
+            )}
+
         </div>
     )
 }
