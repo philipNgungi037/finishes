@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import { auth, fs } from '../../config/Firebase';
-import { createUserWithEmailAndPassword } from '@firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@firebase/auth';
 import { collection, doc, setDoc } from 'firebase/firestore'; 
 
 // Create context
@@ -39,6 +39,17 @@ export const AuthProvider = ({ children }) => {
         message = 'The password is too weak, atleast 6 characters';
       }
       setErrorMsg(message);
+    }
+  };
+
+  //this is the function to login an user to the app
+  const login = async ({ email, password }) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      setSuccessMsg('Login successful');
+      
+    } catch (error) {
+      setErrorMsg('Login failed: ' + error.message);
     }
   };
   
