@@ -29,7 +29,16 @@ export const AuthProvider = ({ children }) => {
       
       setSuccessMsg('User created successfully');
     } catch (error) {
-      setErrorMsg(error.message);
+      //customizing our error message to the UI
+      let message = 'An error occurred during signup.';
+      if (error.code === 'auth/email-already-in-use') {
+        message = 'Oops! User already exists.';
+      } else if (error.code === 'auth/invalid-email') {
+        message = 'The email address is not valid.';
+      } else if (error.code === 'auth/weak-password') {
+        message = 'The password is too weak, atleast 6 characters';
+      }
+      setErrorMsg(message);
     }
   };
   
