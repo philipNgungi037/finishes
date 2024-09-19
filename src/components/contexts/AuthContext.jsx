@@ -46,6 +46,7 @@ export const AuthProvider = ({ children }) => {
   const login = async ({ email, password }) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log("User logged in: ", userCredential.user);
       setSuccessMsg('Login successful');
       
     } catch (error) {
@@ -55,7 +56,7 @@ export const AuthProvider = ({ children }) => {
   
 
   return (
-    <AuthContext.Provider value={{ signup, successMsg, errorMsg }}>
+    <AuthContext.Provider value={{ signup, login, successMsg, errorMsg }}>
       {children}
     </AuthContext.Provider>
   );
