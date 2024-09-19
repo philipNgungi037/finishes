@@ -2,9 +2,11 @@ import React, { createContext, useContext, useState } from 'react';
 import { auth, fs } from '../../config/Firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@firebase/auth';
 import { collection, doc, setDoc } from 'firebase/firestore'; 
+import { useNavigate } from 'react-router-dom';
 
 // Create context
 const AuthContext = createContext();
+
 
 // Custom hook to use the AuthContext
 export const useAuth = () => useContext(AuthContext);
@@ -13,6 +15,9 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
+
+  //to use in redirecting to login page after registering or to home page after logging in the app.
+  const navigate = useNavigate();
 
  
   const signup = async ({ username, email, password }) => {
@@ -48,6 +53,9 @@ export const AuthProvider = ({ children }) => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in: ", userCredential.user);
       setSuccessMsg('Login successful');
+      
+      //redirect to home
+      navigate('/')
       
     } catch (error) {
       setErrorMsg('Login failed: ' + error.message);
