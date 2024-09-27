@@ -38,7 +38,7 @@ module.exports = {
 
       //this will be our global colors
       colors: {
-        main: "yellow", 
+        appColor: "yellow", 
         background: "", 
       },
       /**Fonts  */
