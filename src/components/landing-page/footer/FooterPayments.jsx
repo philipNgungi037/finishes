@@ -12,7 +12,7 @@ const FooterPayments = () => {
         {
             payments.map(
                 (payment, index) =>
-                <div key={index} className='border border-yellow-400 py-1 lg:py-4 px-1 lg:px-2 rounded-md text-justify'>
+                <div key={index} className='border border-appColor py-1 lg:py-4 px-1 lg:px-2 rounded-md text-justify'>
                     {payment.name}
                 </div>
             )
