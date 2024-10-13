@@ -1,8 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
-import { auth, fs } from '../../config/Firebase';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@firebase/auth';
-import { collection, doc, setDoc } from 'firebase/firestore'; 
 import { useNavigate } from 'react-router-dom';
+import React, { createContext, useContext, useState } from 'react';
+
 
 // Create context
 const AuthContext = createContext();
@@ -11,54 +9,75 @@ const AuthContext = createContext();
 // Custom hook to use the AuthContext
 export const useAuth = () => useContext(AuthContext);
 
+
+
 // AuthProvider to wrap the application and provide authentication-related data
 export const AuthProvider = ({ children }) => {
+
+  
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
-
-  //to use in redirecting to login page after registering or to home page after logging in the app.
   const navigate = useNavigate();
 
- 
-  const signup = async ({ username, email, password }) => {
+  const signup = async (userData) => {
     try {
-      const credentials = await createUserWithEmailAndPassword(auth, email, password);
+      setSuccessMsg('');
+      setErrorMsg('');
+  
       
-      const usersCollection = collection(fs, 'users'); // Reference to 'users' collection
-      const userDoc = doc(usersCollection, credentials.user.uid); // Reference to the user's document
-      
-      await setDoc(userDoc, {
-        username: username,
-        email: email,
+      const response = await fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({ user: userData }), // Wrap user data in { user: ... }
       });
-      
-      setSuccessMsg('User created successfully');
-    } catch (error) {
-      //customizing our error message to the UI
-      let message = 'An error occurred during signup.';
-      if (error.code === 'auth/email-already-in-use') {
-        message = 'Oops! User already exists.';
-      } else if (error.code === 'auth/invalid-email') {
-        message = 'The email address is not valid.';
-      } else if (error.code === 'auth/weak-password') {
-        message = 'The password is too weak, atleast 6 characters';
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(
+          errorData.message || 'Failed to create an account. Please try again.'
+        );
       }
-      setErrorMsg(message);
+  
+      const data = await response.json();
+      setSuccessMsg('Account created successfully!');
+      navigate('/signin')
+      console.log('User created:', data);
+    } catch (error) {
+      console.error('Error during signup:', error.message);
+      setErrorMsg(error.message);
     }
   };
+  
 
-  //this is the function to login an user to the app
-  const login = async ({ email, password }) => {
+  const login = async (formData) => {
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log("User logged in: ", userCredential.user);
-      setSuccessMsg('Login successful');
-      
-      //redirect to home
-      navigate('/')
-      
+      const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: {
+            email: formData.email,
+            password: formData.password,
+          },
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+  
+      const data = await response.json();
+      setSuccessMsg(data.message);
+      setErrorMsg(''); // Clear any previous error messages
+      navigate ('/')
+      console.log(data);
     } catch (error) {
-      setErrorMsg('Login failed: ' + error.message);
+      console.error(error.message);
     }
   };
   
