@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 const NavList = () => {
     // state to open/close toggle-menu
     const [isOpen, setIsOpen] = useState(false);
+    const [username, setUsername] = useState(null);
 
     //function to toggle
     const toggleMenu = () => {
@@ -21,6 +22,9 @@ const NavList = () => {
             setUsername(null); // Clear username if not logged in
         }
     }, []); // Run only once on component mount
+
+     // Get the updated NavData based on username state
+     const navItems = Navs(username);
 
 
     return (
