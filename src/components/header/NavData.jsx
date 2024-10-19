@@ -1,9 +1,9 @@
-const Navs = [
+const Navs = (username) => [
   
     {
         id: 1,
-        name:'Account',
-        link: 'signin',
+        name: username ? username : 'Account', // Conditionally show username or 'Account'
+        link: username ? 'profile' : 'signin', // Link to profile if logged in, otherwise signin
         icon: '<ion-icon name="person-outline"></ion-icon>',
     //     subnavs: [
     //         {
