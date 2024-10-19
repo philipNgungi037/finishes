@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navs from './NavData'
 import { NavLink } from 'react-router-dom';
 const NavList = () => {
@@ -10,8 +10,17 @@ const NavList = () => {
         setIsOpen(!isOpen);
     };
 
-    // const activeLink = "border-b-4 border-yellow-400  text-yellow-400";
-    // const normalLink = "";
+      // Check token and user info on component mount
+      useEffect(() => {
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (token && user && user.username) {
+            setUsername(user.username); // Set the username if token and user data are available
+        } else {
+            setUsername(null); // Clear username if not logged in
+        }
+    }, []); // Run only once on component mount
 
 
     return (
