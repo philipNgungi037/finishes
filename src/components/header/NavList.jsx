@@ -17,6 +17,11 @@ const NavList = () => {
         setIsOpen(!isOpen);
     };
 
+        // Toggle dropdown
+    const toggleDropdown = () => {
+        setDropdownOpen(!isDropdownOpen);
+        };
+
     // // Check user info on component mount
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'));
@@ -39,20 +44,48 @@ const NavList = () => {
 
                 {/* Access Navs data, then map over it displaying them in flex list, the second last item in the list is backgrounded as yellow */}
                 <ul className='flex justify-end gap-2 text-xs lg:text-sm '>
-                    {
-                        navItems.map(
-                            (nav, index) =>
-                                <li className={`nav-item  ${index === navItems.length - 2 ? 'yellow-bg' : ''}`} key={index}>
-                                    <NavLink
-                                        to={nav.link}
+                {navItems.map((nav, index) => (
+                        <li
+                            className={`nav-item ${index === navItems.length - 2 ? 'yellow-bg' : ''}`}
+                            key={index}
+                        >
+                            {/* For the account/username item, handle dropdown toggle on click */}
+                            {nav.subnavs ? (
+                                <a href="#!" onClick={toggleDropdown} className='cursor-pointer'>
+                                    <span dangerouslySetInnerHTML={{ __html: nav.icon }} className='mr-1' />
+                                    {nav.name}
+                                </a>
+                            ) : (
+                                <NavLink to={nav.link}>
+                                    <span dangerouslySetInnerHTML={{ __html: nav.icon }} className='mr-1' />
+                                    {nav.name}
+                                </NavLink>
+                            )}
 
-                                    >
-                                        <span dangerouslySetInnerHTML={{ __html: nav.icon }} className='mr-1 ' />
-                                        {nav.name}
-                                    </NavLink>
-                                </li>
-                        )
-                    }
+                            {/* Conditionally render dropdown when subnavs exist and dropdown is open */}
+                            {nav.subnavs && isDropdownOpen && (
+                                <ul className='dropdown bg-white z-50 mt-4 shadow-lg rounded p-2 absolute'>
+                                    {nav.subnavs.map((subnav, subIndex) => (
+                                        <li key={subIndex}>
+                                            <NavLink to={subnav.link} className="block py-1 px-2 hover:bg-gray-200">
+                                                {subnav.name}
+                                            </NavLink>
+                                        </li>
+                                    ))}
+
+                                    {/* Add Logout option */}
+                                    <li>
+                                        <button
+                                            onClick={logout}
+                                            className="block w-full text-left py-1 px-2 hover:bg-gray-200"
+                                        >
+                                            Logout
+                                        </button>
+                                    </li>
+                                </ul>
+                            )}
+                        </li>
+                    ))}
                 </ul>
             </nav>
 
