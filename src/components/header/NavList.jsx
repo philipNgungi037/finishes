@@ -5,6 +5,7 @@ const NavList = () => {
     // state to open/close toggle-menu
     const [isOpen, setIsOpen] = useState(false);
     const [username, setUsername] = useState(null);
+    const [isDropdownOpen, setDropdownOpen] = useState(false); // State for dropdown whether its visible or not
 
     //function to toggle
     const toggleMenu = () => {
