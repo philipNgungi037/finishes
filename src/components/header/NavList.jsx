@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Navs from './NavData'
 import { NavLink } from 'react-router-dom';
+import { useAuth
+ } from '../contexts/AuthContext';
 const NavList = () => {
     // state to open/close toggle-menu
     const [isOpen, setIsOpen] = useState(false);
     const [username, setUsername] = useState(null);
     const [isDropdownOpen, setDropdownOpen] = useState(false); // State for dropdown whether its visible or not
+
+    const { logout } = useAuth(); // Destructure the logout function from useAuth
+
 
     //function to toggle
     const toggleMenu = () => {
