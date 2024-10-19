@@ -11,20 +11,20 @@ const NavList = () => {
         setIsOpen(!isOpen);
     };
 
-      // Check token and user info on component mount
-      useEffect(() => {
-        const token = localStorage.getItem('token');
+    // // Check user info on component mount
+    useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'));
-
-        if (token && user && user.username) {
-            setUsername(user.username); // Set the username if token and user data are available
+    
+        if (user && user.username) {
+            setUsername(user.username); // Set the username if user is logged in
         } else {
             setUsername(null); // Clear username if not logged in
         }
-    }, []); // Run only once on component mount
+    }, []);
+    
 
-     // Get the updated NavData based on username state
-     const navItems = Navs(username);
+    // Get the updated NavData based on username state
+    const navItems = Navs(username);
 
 
     return (
