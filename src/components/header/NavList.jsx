@@ -34,9 +34,9 @@ const NavList = () => {
                 {/* Access Navs data, then map over it displaying them in flex list, the second last item in the list is backgrounded as yellow */}
                 <ul className='flex justify-end gap-2 text-xs lg:text-sm '>
                     {
-                        Navs.map(
+                        navItems.map(
                             (nav, index) =>
-                                <li className={`nav-item  ${index === Navs.length - 2 ? 'yellow-bg' : ''}`} key={index}>
+                                <li className={`nav-item  ${index === navItems.length - 2 ? 'yellow-bg' : ''}`} key={index}>
                                     <NavLink
                                         to={nav.link}
 
