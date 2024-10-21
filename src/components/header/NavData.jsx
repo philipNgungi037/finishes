@@ -5,11 +5,11 @@ const Navs = (username) => [
         link: username ? 'profile' : 'signin',
         icon: '<ion-icon name="person-outline"></ion-icon>',
         //to be displayed by the account/user dropdown.
-        subnavs: username ? [
+        subnavs: [
             { name: 'Orders', link: '/orders' },
             { name: 'Profile', link: '/profile' },
             { name: 'Saved Items', link: '/saved-items' }
-        ] : null, 
+        ] 
     },
     {
         id: 2,
